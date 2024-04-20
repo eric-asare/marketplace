@@ -1,0 +1,2 @@
+Project Overview:
+Our team aims to create a dynamic Marketplace website exclusively for the NYUAD community, facilitating a platform for students to buy and sell goods within a trusted network. Inspired by traditional buy-and-sell facebook groups, this website will enhance user experience by offering structured listings, advanced search capabilities, and dedicated forums for real-time discussions on market needs.
