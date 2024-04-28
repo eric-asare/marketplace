@@ -1,0 +1,48 @@
+/* Add this new CSS rule */
+.navbar-wrapper {
+    padding-left: 50px; 
+}
+
+/* Existing styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #ffffff; 
+}
+
+/* Header and navbar styles */
+.navbar-dark {
+    background-color: #343a40; 
+
+}
+
+.navbar-toggler {
+    background-color: #ffffff; 
+}
+
+.navbar-brand span {
+    color: #000000; 
+}
+
+/* Navigation links */
+.navbar-nav .nav-link {
+    color: #ffffff; 
+}
+
+/* Footer styles to match */
+.footer {
+    background-color: #343a40;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+
+.container {
+    padding-left: 50px !important;
+}
