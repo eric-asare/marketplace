@@ -4,37 +4,31 @@ print("Content-Type: text/html\n\n")
 import cgi
 import cgitb; cgitb.enable()  # for debugging purposes
 
+form = cgi.FieldStorage()
+search_query = form.getvalue('search', '').lower()
 
-def read_products(filename):
+def read_products(filename, search_query):
     products = []
     try:
         with open(filename, 'r') as file:
             for line in file:
                 parts = line.strip().split(',')
-                if len(parts) == 5:
-                    products.append({
-                        'id': parts[0],
-                        'name': parts[1],
-                        'description': parts[2],
-                        'price': parts[3],
-                        'image_url': parts[4]
-                    })
+                if len(parts) == 5 and (search_query in parts[1].lower() or not search_query):
+                    products.append({'id': parts[0], 'name': parts[1], 'description': parts[2], 'price': parts[3], 'image_url': parts[4]})
     except FileNotFoundError:
         print("<p>Error: The file containing the products was not found.</p>")
     return products
 
 def print_product_table(products):
     table_html = '<table class="table">\n<thead>\n<tr>\n'
-    table_html += '<th>Image</th>\n<th>Name</th>\n<th>Description</th>\n<th>Price</th>\n</tr>\n</thead>\n<tbody>\n'
+    table_html += '<th>Image</th>\n<th>Name</th>\n<th>Description</th>\n<th>Price</th><th>Delete</th>\n</tr>\n</thead>\n<tbody>\n'
     for product in products:
         table_html += f'<tr>\n<td><img src="{product["image_url"]}" alt="{product["name"]}" style="width:100px;"></td>\n'
         table_html += f'<td>{product["name"]}</td>\n<td>{product["description"]}</td>\n'
-        table_html += f'<td>${product["price"]}</td>\n</tr>\n'
+        table_html += f'<td>${product["price"]}</td>\n'
+        table_html += f'<td><a href="delete-product.py?id={product["id"]}" class="delete-btn">Delete</a></td>\n'
     table_html += '</tbody>\n</table>\n'
     return table_html
-
-
-
 
 
 print("""
@@ -82,12 +76,19 @@ print("""
     </div>
 </nav>
 
-<!-- Product table and the rest of the body content -->
+<!-- Search form -->
 <div class="container mt-5">
+    <!-- Search form -->
+    <div class="search-container">
+        <form action="all_products.py" method="get">
+            <input type="text" name="search" placeholder="Search by name" value="">
+            <input type="submit" value="Search">
+        </form>
+    </div>
+    
     <h1 class="mb-4">All Products</h1>
-""")
-
-products = read_products('products.txt')
+    """)
+products = read_products('products.txt', search_query)
 print(print_product_table(products))
 
 print("""
@@ -107,4 +108,5 @@ print("""
 </body>
 </html>
 """)
+
 

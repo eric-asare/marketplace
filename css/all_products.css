@@ -54,6 +54,33 @@ html, body {
     border-radius: 5px;
 }
 
+.search-container {
+    display: flex;
+    justify-content: flex-end; /* Align search to the right */
+    padding-bottom: 20px; /* Add some space below the search form */
+}
+
+.search-container form {
+    display: flex;
+    gap: 8px; /* Add a gap between the input and the button */
+}
+
+.search-container input[type="text"] {
+    padding: 8px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-container input[type="submit"] {
+    padding: 8px 15px;
+    background-color: #db4566; /* Pink background for submit button */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; /* Cursor to pointer to indicate clickable */
+}
+
 .footer {
     background-color: #343a40;
     color: #ffffff;
@@ -80,4 +107,15 @@ html, body {
     border: 1px solid #ddd;
     text-align: left;
     padding: 8px;
+}
+
+.delete-btn {
+    color: #ff0000;
+    background-color: transparent;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: color 0.2s, background-color 0.2s;
 }
