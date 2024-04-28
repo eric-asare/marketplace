@@ -2,6 +2,8 @@
 
 import cgi
 
+print("Content-Type: text/html\n\n")
+
 # Function to save user data to a text file
 def save_user_info(name, email, password):
     with open("registered_users.txt", "a") as file:
