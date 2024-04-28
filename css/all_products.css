@@ -1,40 +1,59 @@
-/* Add this new CSS rule */
-.navbar-wrapper {
-    padding-left: 50px; 
-}
-
-/* Existing styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: "Poppins", sans-serif;
-    background-color: #ffffff; 
+html, body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    overflow-x: hidden;
 }
 
-/* Header and navbar styles */
-.navbar-dark {
-    background-color: #343a40; 
-
+.header-container {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
 }
 
-.navbar-toggler {
-    background-color: #ffffff; 
+.marketplace-name {
+    font-size: 28px;
+    font-weight: bold;
+    color: #000;
 }
 
-.navbar-brand span {
-    color: #000000; 
+.navbar {
+    background-color: #f3a2ff;
+    padding: 10px 0;
+    margin-bottom: 20px;
 }
 
-/* Navigation links */
-.navbar-nav .nav-link {
-    color: #ffffff; 
+.navbar-nav {
+    list-style: none;
+    padding-left: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
-/* Footer styles to match */
+.navbar-nav li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.navbar-nav a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    display: block;
+}
+
+.navbar-nav a:hover {
+    background-color: #db4566;
+    border-radius: 5px;
+}
+
 .footer {
     background-color: #343a40;
     color: #ffffff;
@@ -42,7 +61,23 @@ body {
     padding: 20px 0;
 }
 
-
 .container {
-    padding-left: 50px !important;
+    padding-left: 50px;
+    padding-right: 50px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
 }

@@ -10,7 +10,6 @@ fieldset {
     border: 2px solid #ccc;
     padding: 10px;
     margin: 5%;
-    /* Adjust width as needed */
     margin: auto;
     /* Center the form */
 }
@@ -873,8 +872,3 @@ a:focus {
     color: #cbc9c9;
 }
 
-
-/* end footer section*/
-
-
-/*# sourceMappingURL=style.css.map */
